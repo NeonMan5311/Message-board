@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/output.css" rel="stylesheet">
+    <title>Message-board</title>
+</head>
+
+<body>
+    <div class="min-h-screen w-full bg-white relative font-mono ">
+        <div class="absolute inset-0 z-0"
+            style="background: #ffffff; background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.35) 1px, transparent 0); background-size: 20px 20px;" />
+        <div class="flex h-screen justify-center items-center ">
+            <div class="w-[400px] h-[600px] border-white rounded-[10px] shadow-md bg-white">
+                <%- include('altNavBar')%>
+                    <%# Author %>
+                        <div class="flex flex-row pt-4 w-100 px-5 justify-between">
+                            <span class="text-[18px] tracking-widest">
+                                <%=resMessage.username%> :-
+                            </span>
+                            <div class="flex ">
+                                <%# Submit Button %>
+                                    <div class="pl-5">
+                                        <a href="/">
+                                            <button 
+                                                class=" h-[25px] w-[25px] cursor-pointer active:scale-102 hover:scale-105 transition border-1 border-black/50
+                                                rounded-full  ">
+                                                <-
+                                            </button>
+                                        </a>
+                                    </div>
+                            </div>
+                        </div>
+                        <%# Message %>
+                            <div class="flex flex-col pt-4">
+                                <span class="pl-5">
+                                    <%=resMessage.message%>
+                                </span>
+                            </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

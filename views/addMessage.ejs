@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/output.css" rel="stylesheet">
+    <title>Message-board</title>
+</head>
+
+<body>
+    <div class="min-h-screen w-full bg-white relative font-mono ">
+        <div class="absolute inset-0 z-0"
+            style="background: #ffffff; background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.35) 1px, transparent 0); background-size: 20px 20px;" />
+        <div class="flex h-screen justify-center items-center ">
+            <div class="w-[400px] h-[600px] border-white rounded-[10px] shadow-md bg-white">
+                <%- include('altNavBar')%>
+                    <form action="/new" method="post" class="flex flex-col gap-3 pt-4">
+
+                        <%# Author %>
+                        <div class="flex flex-col gap-4">
+                            <span class="pl-5">Author</span>
+                            <input name="author" class="border-2 px-2 mx-4.5 focus:border-2 focus:outline-none" type="text">
+                        </div>
+                        <%# Message %>
+                        <div class="flex flex-col gap-4">
+                            <span class="pl-5">Message</span>
+                            <input name="message" class="border-2 px-2 mx-4.5 focus:border-2 focus:outline-none" type="text"
+                                name="message" id="newM">
+                        </div>
+                        <%# Submit Button %>
+                        <div class="w-100 flex justify-center items-center">
+                            <button type="submit" class="flex items-center justify-center h-[40px] w-[80px] mt-3 cursor-pointer active:scale-105 hover:scale-110 transition border-2 border-black -tracking-tighter">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
